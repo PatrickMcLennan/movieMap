@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"allowJs": false,
+		"module": "commonjs",
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"outDir": "./",
+		"removeComments": true,
+		"target": "es6"
+	},
+	"exclude": ["node_modules", "./serverDictionary.ts"],
+	"include": ["./**/*.ts"]
+}

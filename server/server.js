@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const bodyParser = require("body-parser");
+const compression = require("compression");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const express = require("express");
+const getLogin_1 = require("./controllers/getLogin");
+dotenv.config();
+const PORT = 4000 || process.env.PORT;
+const app = express();
+app.use(compression());
+app.use(cors());
+app.use(bodyParser.json());
+app.get('/login', getLogin_1.default);
+app.listen(PORT, () => console.log(`The App is running on Port ${PORT}`));
