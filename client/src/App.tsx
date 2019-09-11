@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, RouteComponentProps, Switch, RouteProps } from 'react-router-dom';
+import { BrowserRouter as Router, Route, RouteProps, Switch } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 
 import FourOhFour from './pages/FourOhFour/FourOhFour';
@@ -12,7 +12,7 @@ import { GlobalStyle, theme } from './utils/GlobalStyles';
 import { IHomeProps } from './pages/Home/Home';
 import { ISavedMovieProps } from './pages/SavedMovies/SavedMovies';
 
-const App: React.SFC = (): React.ReactElement => (
+const App: React.FunctionComponent = (): React.ReactElement => (
 	<>
 		<GlobalStyle />
 		<ThemeProvider theme={theme}>

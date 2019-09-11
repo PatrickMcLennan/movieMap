@@ -1,6 +1,6 @@
-import { createGlobalStyle, css, GlobalStyleComponent } from 'styled-components';
+import { createGlobalStyle, css } from 'styled-components';
 
-export const GlobalStyle: GlobalStyleComponent<any, any> = createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
     *,
     *::before,
     *::after {

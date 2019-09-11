@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router-dom';
 
 const useMount = (newTitle: string, userId: string, props: RouteComponentProps<{ paramsId: string }>): void =>
 	useEffect((): void => {

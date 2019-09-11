@@ -4,7 +4,7 @@ import { StyledSection } from './Login.style';
 
 import { ILocalStorageUser } from '../../../clientDictionary';
 
-const Login: React.FC = (): React.ReactElement => {
+const Login: React.FunctionComponent = (): React.ReactElement => {
 	const { useContext, useEffect, useState } = React;
 	const [email, setEmail] = useState<string>('');
 	const [password, setPassword] = useState<string>('');
@@ -26,22 +26,30 @@ const Login: React.FC = (): React.ReactElement => {
 
 	return (
 		<StyledSection>
-			<form onSubmit={(e: React.FormEvent<HTMLFormElement>) => login(e)}>
+			<form data-testid="login-form" onSubmit={(e: React.FormEvent<HTMLFormElement>) => login(e)}>
 				<input
+					data-testid="login-email"
 					onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setEmail(e.target.value)}
 					type="email"
 					value={email}
 				/>
 				<input
+					data-testid="login-password"
 					onChange={(e: React.ChangeEvent<HTMLInputElement>): void => setPassword(e.target.value)}
 					type="password"
 					value={password}
 				/>
 				<label htmlFor="saveUser">
 					Remember me on this device
-					<input checked={saveUser} id="saveUser" onChange={() => setSaveUser(!saveUser)} type="checkbox" />
+					<input
+						data-testid="login-remember"
+						checked={saveUser}
+						id="saveUser"
+						onChange={(): void => setSaveUser(!saveUser)}
+						type="checkbox"
+					/>
 				</label>
-				<input type="submit" value="Log In" />
+				<input data-testid="login-submit" type="submit" value="Log In" />
 			</form>
 		</StyledSection>
 	);

@@ -8,17 +8,17 @@ import Nav from '../../layout/Nav/Nav';
 
 import { IUser } from '../../../clientDictionary';
 
-export interface ISavedMovieProps {
+export interface ISavedMovieProps extends RouteComponentProps {
 	paramsId: string;
 }
 
-const SavedMovies: React.FunctionComponent<ISavedMovieProps> = (
-	props: RouteComponentProps<ISavedMovieProps>
-): React.ReactElement => {
+const SavedMovies: React.FunctionComponent<ISavedMovieProps> = (props: ISavedMovieProps): React.ReactElement => {
 	const { useContext } = React;
 	const { userId } = useContext<IUser>(UserContext);
 
 	useMount('Saved Movies', userId, props);
+
+	// hello;
 
 	return (
 		<section>
