@@ -1,5 +1,13 @@
 import { createContext } from 'react';
-import { IUser } from '../../clientDictionary';
+import { IMovie } from '../../clientDictionary';
+
+export interface IUser {
+	email: string;
+	firstName: string;
+	lastName: string;
+	savedMovies: IMovie[];
+	userId: string;
+}
 
 const UserContext: React.Context<IUser> = createContext<IUser>({
 	email: '',

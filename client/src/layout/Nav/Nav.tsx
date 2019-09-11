@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import { IUser } from '../../../clientDictionary';
-import UserContext from '../../contexts/userContext';
+import UserContext, { IUser } from '../../contexts/userContext';
 
 const Nav: React.FC = (): React.ReactElement => {
 	const { useContext, useState } = React;

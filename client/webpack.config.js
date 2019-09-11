@@ -1,12 +1,13 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	entry: ['./src/index.ts'],
 	output: {
-		path: path.resolve(__dirname, 'public'),
-		filename: 'app.js'
+		path: path.resolve(__dirname, 'dist'),
+		filename: 'app.[contenthash].js'
 	},
 
 	module: {
@@ -19,10 +20,7 @@ module.exports = {
 			{
 				test: /\.tsx?$/,
 				use: {
-					loader: 'awesome-typescript-loader',
-					options: {
-						reportFiles: ['src/**/*.{ts,tsx}']
-					}
+					loader: 'awesome-typescript-loader'
 				}
 			}
 		]
@@ -32,9 +30,13 @@ module.exports = {
 	},
 	plugins: [
 		new HTMLWebpackPlugin({
-			template: './public/index.html',
-			inject: true
-		})
+			template: path.resolve(__dirname, 'dist/index.html'),
+			inject: true,
+			minify: {
+				collapseWhitespace: true
+			}
+		}),
+		new CleanWebpackPlugin()
 	],
 	devtool: 'source-map',
 	resolve: {

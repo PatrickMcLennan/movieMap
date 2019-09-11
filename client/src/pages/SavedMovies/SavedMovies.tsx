@@ -1,16 +1,14 @@
 import * as React from 'react';
-import { RouteComponentProps, RouteProps } from 'react-router-dom';
+import { RouteComponentProps } from 'react-router-dom';
 
 import useMount from '../../hooks/useMount';
 
-import UserContext from '../../contexts/userContext';
+import UserContext, { IUser } from '../../contexts/userContext';
 import Nav from '../../layout/Nav/Nav';
 
-import { IUser } from '../../../clientDictionary';
+import { StaticContext } from 'react-router';
 
-export interface ISavedMovieProps extends RouteComponentProps {
-	paramsId: string;
-}
+export interface ISavedMovieProps extends RouteComponentProps<{ paramsId: string }, StaticContext, any> {}
 
 const SavedMovies: React.FunctionComponent<ISavedMovieProps> = (props: ISavedMovieProps): React.ReactElement => {
 	const { useContext } = React;
