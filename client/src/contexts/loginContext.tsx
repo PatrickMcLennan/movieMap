@@ -1,5 +1,5 @@
+import { ILocalStorageUser } from 'Dictionary';
 import { createContext } from 'react';
-import { ILocalStorageUser } from '../../clientDictionary';
 
 export interface ILogin {
 	checkLocalStorage: () => ILocalStorageUser | null;

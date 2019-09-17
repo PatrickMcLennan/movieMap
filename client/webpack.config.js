@@ -1,12 +1,17 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const HTMLWebpackRootPlugin = require('html-webpack-root-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ResourceHintWebpackPlugin = require('resource-hints-webpack-plugin');
 const ScriptExtHTmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
 module.exports = {
 	entry: ['./src/index.ts'],
+	devServer: {
+		contentBase: path.join(__dirname, 'dist'),
+		compress: true,
+		port: 3000
+	},
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'app.[hash].js'
@@ -39,7 +44,8 @@ module.exports = {
 		new CleanWebpackPlugin(),
 		new HTMLWebpackPlugin({
 			hash: true,
-			filename: path.resolve(__dirname, 'dist/index.[hash].html'),
+			filename: path.resolve(__dirname, 'dist/index.html'),
+			template: './template.html',
 			inject: 'head',
 			meta: {
 				'application-name': 'movieMap',
@@ -59,10 +65,20 @@ module.exports = {
 		new ScriptExtHTmlWebpackPlugin({
 			defaultAttribute: 'defer'
 		}),
-		new HTMLWebpackRootPlugin()
+		new ResourceHintWebpackPlugin()
 	],
 	devtool: 'source-map',
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js']
+		extensions: ['.ts', '.tsx', '.js'],
+
+		alias: {
+			Component: path.resolve(__dirname, 'src/components/'),
+			Context: path.resolve(__dirname, 'src/contexts/'),
+			Dictionary: path.resolve(__dirname, './clientDictionary.ts'),
+			Hook: path.resolve(__dirname, 'src/hooks/'),
+			Layout: path.resolve(__dirname, 'src/layout/'),
+			Page: path.resolve(__dirname, 'src/pages/'),
+			Utility: path.resolve(__dirname, 'src/utils/')
+		}
 	}
 };

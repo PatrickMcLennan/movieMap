@@ -1,10 +1,8 @@
+import UserContext, { IUser } from 'Context/userContext';
+import useMount from 'Hook/useMount';
+import Nav from 'Layout/Nav/Nav';
+
 import * as React from 'react';
-
-import Nav from '../../layout/Nav/Nav';
-
-import UserContext, { IUser } from '../../contexts/userContext';
-import useMount from '../../hooks/useMount';
-
 import { StaticContext } from 'react-router';
 import { RouteComponentProps } from 'react-router-dom';
 

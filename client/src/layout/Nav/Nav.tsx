@@ -1,7 +1,8 @@
+import LogoSVG from 'Component/svg/LogoSVG/LogoSVG';
+import UserContext, { IUser } from 'Context/userContext';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-
-import UserContext, { IUser } from '../../contexts/userContext';
+import { StyledNav } from './Nav.style';
 
 const Nav: React.FC = (): React.ReactElement => {
 	const { useContext, useState } = React;
@@ -9,14 +10,14 @@ const Nav: React.FC = (): React.ReactElement => {
 	const [mobileDropdown, setMobileDropdown] = useState<boolean>(false);
 
 	return (
-		<nav>
-			<h1>movieMap</h1>
+		<StyledNav>
+			<LogoSVG />
 
 			<div>
 				<Link to={`/savedMovies/${userId}`}>Saved</Link>
 				<Link to={`/recentlyWatched/${userId}`}>Recently Watched</Link>
 			</div>
-		</nav>
+		</StyledNav>
 	);
 };
 
