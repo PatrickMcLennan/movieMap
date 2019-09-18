@@ -1,13 +1,20 @@
 import styled from 'styled-components';
 
 export const StyledSVG = styled.svg`
-	background-color: red;
+	height: 5vh;
 `;
 
-export const StyledMovie = styled.text`
-	font-size: 3rem;
+const StyledText = styled.text`
+	fill: white;
+	font-size: 2rem;
+	font-weight: 100;
+	letter-spacing: 0.5px;
 `;
 
-export const StyledMap = styled.text`
-	font: 'Helvetica' 3rem sans-serif;
+export const StyledMovie = styled(StyledText)`
+	/* hello */
+`;
+
+export const StyledMap = styled(StyledText)`
+	/* hello */
 `;

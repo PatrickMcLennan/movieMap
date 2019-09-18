@@ -6,6 +6,7 @@ export interface IUser {
 	firstName: string;
 	lastName: string;
 	savedMovies: IMovie[];
+	seenMovies: IMovie[];
 	userId: string;
 }
 
@@ -14,6 +15,7 @@ const UserContext: React.Context<IUser> = createContext<IUser>({
 	firstName: '',
 	lastName: '',
 	savedMovies: [],
+	seenMovies: [],
 	userId: ''
 });
 
