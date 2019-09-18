@@ -1,6 +1,7 @@
-import UserContext, { IUser } from 'Context/userContext';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+
+import UserContext, { IUser } from 'Context/userContext';
 import { StyledFigcaption, StyledFigure, StyledH6, StyledImg, StyledP } from './FloatingMovieCard.style';
 
 interface IFloatingMovieCardProps {

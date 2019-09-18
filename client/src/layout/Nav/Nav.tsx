@@ -1,7 +1,8 @@
-import LogoSVG from 'Component/svg/LogoSVG/LogoSVG';
-import UserContext, { IUser } from 'Context/userContext';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+
+import LogoSVG from 'Component/svg/LogoSVG/LogoSVG';
+import UserContext, { IUser } from 'Context/userContext';
 import { StyledNav } from './Nav.style';
 
 const Nav: React.FC = (): React.ReactElement => {

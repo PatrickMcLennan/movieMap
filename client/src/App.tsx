@@ -1,12 +1,12 @@
+import * as React from 'react';
+import { BrowserRouter as Router, Route, RouteProps, Switch } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+
 import FourOhFour from 'Page/FourOhFour/FourOhFour';
 import Home, { IHomeProps } from 'Page/Home/Home';
 import Login from 'Page/Login/Login';
 import SavedMovies, { ISavedMovieProps } from 'Page/SavedMovies/SavedMovies';
 import { GlobalStyle, theme } from 'Utility/GlobalStyles';
-
-import * as React from 'react';
-import { BrowserRouter as Router, Route, RouteProps, Switch } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
 
 const App: React.FunctionComponent = (): React.ReactElement => (
 	<>

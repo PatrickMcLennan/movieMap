@@ -1,5 +1,6 @@
-import { IMovie } from 'Dictionary';
 import { createContext } from 'react';
+
+import { IMovie } from 'Dictionary';
 
 export interface IUser {
 	email: string;

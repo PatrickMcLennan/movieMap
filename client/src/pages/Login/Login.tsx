@@ -1,7 +1,8 @@
+import * as React from 'react';
+
 import loginContext, { ILogin } from 'Context/loginContext';
 import { ILocalStorageUser } from 'Dictionary';
 import Nav from 'Layout/Nav/Nav';
-import * as React from 'react';
 import { StyledSection } from './Login.style';
 
 const Login: React.FunctionComponent = (): React.ReactElement => {

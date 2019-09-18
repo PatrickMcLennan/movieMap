@@ -1,10 +1,10 @@
-import UserContext, { IUser } from 'Context/userContext';
-import useMount from 'Hook/useMount';
-import Nav from 'Layout/Nav/Nav';
-
 import * as React from 'react';
 import { StaticContext } from 'react-router';
 import { RouteComponentProps } from 'react-router-dom';
+
+import UserContext, { IUser } from 'Context/userContext';
+import useMount from 'Hook/useMount';
+import Nav from 'Layout/Nav/Nav';
 
 export interface ISavedMovieProps extends RouteComponentProps<{ paramsId: string }, StaticContext, any> {}
 

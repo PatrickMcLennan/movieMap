@@ -1,6 +1,7 @@
-import UserContext, { IUser } from 'Context/userContext';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
+
+import UserContext, { IUser } from 'Context/userContext';
 
 const FourOhFour: React.FunctionComponent = (): React.ReactElement => {
 	const { useContext, useEffect } = React;
