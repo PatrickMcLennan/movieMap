@@ -8,7 +8,7 @@ import Nav from 'Layout/Nav/Nav';
 
 export interface IHomeProps extends RouteComponentProps<{ paramsId: string }, StaticContext, any> {}
 
-const Home: React.FunctionComponent<IHomeProps> = (props: IHomeProps): React.ReactElement<IHomeProps> => {
+const Home: React.FC<IHomeProps> = (props: IHomeProps): React.ReactElement => {
 	const { useContext } = React;
 	const { userId } = useContext<IUser>(UserContext);
 

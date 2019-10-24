@@ -4,10 +4,10 @@ import * as cors from 'cors';
 import * as dotenv from 'dotenv';
 import * as express from 'express';
 import { connect } from 'mongoose';
+dotenv.config();
 
 import getLogin from './controllers/getLogin';
 
-dotenv.config();
 const PORT: number | string = 4000 || process.env.PORT;
 
 const app: express.Application = express();

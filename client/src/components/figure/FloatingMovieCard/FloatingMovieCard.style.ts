@@ -29,3 +29,11 @@ export const StyledP = styled.p`
 	font-size: 1.6rem;
 	line-height: 2rem;
 `;
+
+export const StyledRatingBox = styled.div`
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	height: 2.5rem;
+	width: 3rem;
+`;

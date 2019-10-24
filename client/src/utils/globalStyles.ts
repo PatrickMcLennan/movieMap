@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme: object = {
+	// Layout
 	flexin: (jc: string = `center`, ai: string = `center`, fd: string = `row`, fw: string = `nowrap`) =>
 		css`
 			display: flex;
@@ -28,5 +29,9 @@ export const theme: object = {
 			flex-direction: ${fd};
 			flex-wrap: ${fw};
 		`,
-	color: 'red'
+	inputStyles: (padding: string = `8px 11px`, fontSize: string = `16px`, lineHeight: string = `20px`) => css`
+		padding: ${padding};
+		font-size: ${fontSize};
+		line-height: ${lineHeight};
+	`
 };
